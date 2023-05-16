@@ -1,0 +1,19 @@
+html {
+  background-color: #01001f;
+  background-image: url("assets/img/brick-wall-dark.png");
+
+  body {
+    background-color: transparent;
+  }
+}
+
+.app {
+  .container {
+    background-color: transparent;
+
+    header {
+      margin-top: 50px;
+      color: white;
+    }
+  }
+}
