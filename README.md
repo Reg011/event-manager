@@ -13,7 +13,7 @@ Refer to /back-end README.md for details
 ### Credits
 
 Made by David Michaud for Kumojin.
-Completion time: 14 hours.
+Completion time: 15 hours.
 
 ### Misc
 
