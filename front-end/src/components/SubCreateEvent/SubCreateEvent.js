@@ -22,7 +22,7 @@ const SubCreateEvent = ({
             className="form-control"
             value={title}
             onChange={setTitle}
-            maxlength="32"
+            maxLength="32"
           />
         </div>
         <div>
@@ -31,7 +31,7 @@ const SubCreateEvent = ({
             className="form-control"
             value={description}
             onChange={setDescription}
-            maxlength="200"
+            maxLength="200"
           />
         </div>
         <div>
