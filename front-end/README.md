@@ -4,7 +4,8 @@ Front-end part of the app.
 
 ## Quick start
 
-`yarn start`
+1. Run `yarn` or `npm install`
+2. Run `yarn start` or `npm start`
 
 ## Tech stack
 
