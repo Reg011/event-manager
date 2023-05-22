@@ -8,13 +8,14 @@ const cors = require("cors");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 
-app.set("port", process.env.PORT || 8000);
+const port = process.env.PORT || 8000;
+app.set("port", port);
 
 const allowedOrigins = [
-  // Client development origin
+  // Client development origin (unsecure)
   "http://localhost:3000",
-  // Server development origin
-  "http://localhost:8000", // might not be needed
+  // Jest origin (unsecure)
+  "http://localhost",
 ];
 
 const getCORSOrigin = (origin, callback) => {
@@ -36,4 +37,8 @@ app.use(morgan("combined"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-require("./requests")(app);
+require("./routes")(app);
+
+app.listen(port, () => {
+  console.log(`server listening at ${port}`);
+});

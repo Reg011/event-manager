@@ -1,30 +1,20 @@
-const { Client } = require("pg");
+const { Pool } = require("pg"); // great pg feature
 
-export class Connection {
-  con = null;
+const pool = new Pool({
+  host: process.env.HOST,
+  user: process.env.USER,
+  password: process.env.PASSWORD,
+  database: process.env.DB,
+  port: 5432,
+});
 
-  startConnection() {
-    const promise = new Promise((resolve, reject) => {
-      this.con = new Client({
-        host: "localhost",
-        user: "postgres",
-        password: "kumojin011",
-        database: "event-manager",
-      });
+pool.on("error", async (err, client) => {
+  console.error("Unexpected error on client", err, client);
+  process.exit(-1);
+});
 
-      this.con.connect(function (err) {
-        if (err) {
-          reject(err);
-        } else {
-          resolve("connected");
-        }
-      });
-    });
+process.on("exit", () => pool.end());
 
-    return promise;
-  }
-
-  endConnection() {
-    this.con.end();
-  }
-}
+module.exports = {
+  pool,
+};
