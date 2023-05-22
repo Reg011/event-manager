@@ -1,0 +1,45 @@
+.create-events {
+  h2 {
+    margin-bottom: 25px;
+  }
+
+  form {
+    width: 25%;
+    margin-bottom: 50px;
+
+    label {
+      margin-bottom: 10px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    input,
+    textarea {
+      margin-bottom: 25px;
+    }
+
+    textarea {
+      height: 125px;
+    }
+
+    .wrap-submit-button {
+      text-align: right;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .create-events {
+    form {
+      width: 50%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .create-events {
+    form {
+      width: 100%;
+    }
+  }
+}

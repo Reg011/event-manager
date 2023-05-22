@@ -1,19 +1,21 @@
 import React from "react";
 import DatePicker from "react-datepicker";
 
-const DatePickerInput = ({ onChange, name, selected }) => {
+const SubDatePickerInput = ({ onChange, name, selected, className }) => {
   return (
     <>
       <DatePicker
         name={name}
         selected={selected}
         onChange={onChange}
-        dateFormat="MMMM d, yyyy"
         showYearDropdown
         scrollableYearDropdown
+        showTimeSelect
+        dateFormat="Pp"
+        className={className}
       />
     </>
   );
 };
 
-export default DatePickerInput;
+export default SubDatePickerInput;
